@@ -1,10 +1,20 @@
+
+dist: trusty
 sudo: required
 
 language: cpp
 
-services:
-  - docker
+compiler:
+  - gcc
   
-before_install:
-  - docker build -t mradugin/cmake-build-efi .
+addons:
+apt:
+  packages:
+    - gnuefi
+
+script:
+  mkdir example-build
+  cd example-build
+  cmake -DCMAKE_BUILD_TYPE=MinSizeRel ../example
+  make
   
