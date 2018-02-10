@@ -13,8 +13,8 @@ apt:
     - gnuefi
 
 script:
-  mkdir example-build
-  cd example-build
-  cmake -DCMAKE_BUILD_TYPE=MinSizeRel ../example
-  make
+  - mkdir example-build
+  - cd example-build
+  - cmake -DCMAKE_BUILD_TYPE=MinSizeRel ../example
+  - make
   
