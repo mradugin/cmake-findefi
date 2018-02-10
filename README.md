@@ -9,7 +9,9 @@ to geneate resulting efi image.
 Add path where Findefi.cmake is located to CMAKE_MODULE_PATH variable.
 For example, if Findefi.cmake is located next to CMakeLists.txt file, use::
 
+```
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR})
+```
 
 CMAKE_MODULE_PATH should be set before calling find_package().
 See example project.
