@@ -10,7 +10,7 @@ compiler:
 addons:
 apt:
   packages:
-    - gnuefi
+    - gnu-efi
 
 script:
   - mkdir example-build
