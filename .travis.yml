@@ -7,11 +7,15 @@ language: cpp
 compiler:
   - gcc
   
-addons:
-apt:
-  packages:
-    - gnu-efi
+#addons:
+#apt:
+#  packages:
+#    - gnu-efi
 
+before_install:
+  - sudo apt-get update -q
+  - sudo apt-get install gnu-efi -y
+  
 script:
   - mkdir example-build
   - cd example-build
