@@ -7,7 +7,7 @@ to geneate resulting efi image.
 ## Installation
 
 Add path where Findefi.cmake is located to CMAKE_MODULE_PATH variable.
-For example, if Findefi.cmake is located next to CMakeLists.txt file, use::
+For example, if Findefi.cmake is located next to CMakeLists.txt file, use:
 
 ```
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR})
@@ -21,7 +21,7 @@ https://cmake.org/cmake/help/latest/command/find_package.html
 
 ## Usage
 
-The following will produce hello<arch>.efi image::
+The following will produce hello<arch>.efi image:
 
 ```
 find_package(efi REQUIRED)
