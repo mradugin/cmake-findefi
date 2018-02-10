@@ -1,4 +1,6 @@
 # cmake-findefi
+[![Build Status](https://travis-ci.org/mradugin/cmake-findefi.svg?branch=master)](https://travis-ci.org/mradugin/cmake-findefi)
+
 This module finds the gnuefi and efi libraries on the system.
 Additionally finds linker script and crt objects that corresponds to current
 platform (CMAKE_SYSTEM_PROCESSOR), provides create_efi_image() function
