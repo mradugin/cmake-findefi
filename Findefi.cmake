@@ -88,12 +88,12 @@ find_library(GNUEFI_LIBRARY NAMES gnuefi DOC "gnuefi library")
 # all listed variables are TRUE
 include(FindPackageHandleStandardArgs)
 
-find_package_handle_standard_args(Efi
+find_package_handle_standard_args(efi
     DEFAULT_MSG
     EFI_LIBRARY
     EFI_INCLUDE_DIR)
 
-find_package_handle_standard_args(Gnuefi
+find_package_handle_standard_args(gnuefi
     DEFAULT_MSG
     GNUEFI_LIBRARY)
 
