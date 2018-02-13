@@ -87,13 +87,17 @@ find_library(GNUEFI_LIBRARY NAMES gnuefi DOC "gnuefi library")
 # handle the QUIETLY and REQUIRED arguments and set xxx_FOUND to TRUE if
 # all listed variables are TRUE
 include(FindPackageHandleStandardArgs)
+
 find_package_handle_standard_args(Efi
     DEFAULT_MSG
     EFI_LIBRARY
-    GNUEFI_LIBRARY
     EFI_INCLUDE_DIR)
 
-IF (EFI_FOUND)
+find_package_handle_standard_args(Gnuefi
+    DEFAULT_MSG
+    GNUEFI_LIBRARY)
+
+IF (EFI_FOUND AND GNUEFI_FOUND)
     set(EFI_ARCH "${CMAKE_SYSTEM_PROCESSOR}")
 
     if (EFI_ARCH MATCHES "amd64.*|x86_64.*|AMD64.*")
