@@ -23,7 +23,7 @@ https://cmake.org/cmake/help/latest/command/find_package.html
 
 ## Usage
 
-The following will produce hello<arch>.efi image:
+The following will produce hello&lt;x86|x64&gt;.efi image:
 
 ```
 find_package(efi REQUIRED)
