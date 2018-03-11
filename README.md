@@ -1,4 +1,6 @@
 # cmake-findefi
+[![Build Status](https://travis-ci.org/mradugin/cmake-findefi.svg?branch=master)](https://travis-ci.org/mradugin/cmake-findefi)
+
 This module finds the gnuefi and efi libraries on the system.
 Additionally finds linker script and crt objects that corresponds to current
 platform (CMAKE_SYSTEM_PROCESSOR), provides create_efi_image() function
@@ -21,7 +23,7 @@ https://cmake.org/cmake/help/latest/command/find_package.html
 
 ## Usage
 
-The following will produce hello<arch>.efi image:
+The following will produce hello&lt;x86|x64&gt;.efi image:
 
 ```
 find_package(efi REQUIRED)
