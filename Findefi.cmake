@@ -114,7 +114,7 @@ IF (EFI_FOUND AND GNUEFI_FOUND)
     set(EFI_LDS "${EFI_LIBRARY_DIR}/elf_${EFI_ARCH}_efi.lds")
     set(EFI_CRT_OBJS "${EFI_LIBRARY_DIR}/crt0-efi-${EFI_ARCH}.o")
 
-    set(EFI_C_FLAGS -fno-stack-protector -fshort-wchar -mno-red-zone)
+    set(EFI_C_FLAGS -std=gnu89 -nostdinc -fno-stack-protector -fshort-wchar -mno-red-zone)
     set(EFI_LINKER_FLAGS ${EFI_CRT_OBJS} -Wl,-nostdlib -Wl,-znocombreloc -Wl,-T${EFI_LDS} -Wl,-Bsymbolic -Wl,--no-undefined)
     set(EFI_INCLUDE_DIRS "${EFI_INCLUDE_DIR}/efi"
         "${EFI_INCLUDE_DIR}/efi/protocol"
