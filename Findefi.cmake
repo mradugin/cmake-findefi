@@ -142,10 +142,13 @@ IF (EFI_FOUND)
 endif()
 
 function (create_efi_image target out)
+    set(EFI_IMAGE_FILE ${CMAKE_CURRENT_BINARY_DIR}/${out}${EFI_OUT_ARCH}.efi)
     add_custom_command(TARGET ${target} POST_BUILD
         COMMENT "Creating EFI image: ${out}${EFI_OUT_ARCH}.efi"
         COMMAND ${CMAKE_OBJCOPY} -j .text -j .sdata -j .data -j .dynamic
                     -j .dynsym  -j .rel -j .rela -j .reloc
                     --target=efi-app-${EFI_ARCH}
-                    $<TARGET_FILE:${target}> ${out}${EFI_OUT_ARCH}.efi)
+                    $<TARGET_FILE:${target}> ${EFI_IMAGE_FILE})
+
+    set_property(TARGET ${target} PROPERTY EFI_IMAGE_FILE ${EFI_IMAGE_FILE})
 endfunction()
